@@ -44,6 +44,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'will_paginate', '~> 3.0.5'
 gem 'will_paginate-bootstrap'
 
+# Use carrierwave
+gem 'carrierwave'
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

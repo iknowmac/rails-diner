@@ -42,9 +42,14 @@ class RecipesController < ApplicationController
  
         redirect_to recipes_path
     end
-
+    
+    #uploaded_io = params[:image]
+        #File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'wb') do |file|
+        #file.write(uploaded_io.read)
+    #end
+    
     private
         def recipe_params
-            params.require(:recipe).permit(:title, :description, :servings, :prep_time, :cook_time, :passive_time)
+            params.require(:recipe).permit(:title, :image, :description, :servings, :prep_time, :cook_time, :passive_time)
         end
 end
