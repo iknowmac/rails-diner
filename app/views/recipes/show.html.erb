@@ -1,41 +1,34 @@
-<p>
-  <strong>Title:</strong>
-  <%= @recipe.title %>
-</p>
- 
-<p>
-  <strong>Description:</strong>
-  <%= @recipe.description %>
-</p>
 
-<p>
-  <strong>Servings:</strong>
-  <%= @recipe.servings %>
-</p>
- 
-<p>
-  <strong>Prep time:</strong>
-  <%= @recipe.prep_time %>
-</p>
+    <div class="page-header">
+        <h1><%= link_to '<i class="fa fa-arrow-circle-left"></i>'.html_safe, recipes_path %> <%= @recipe.title %></h1>
+    </div>
+    
+    <div class="row">
+        
+        <div class="col-sm-8">
+            <% if @recipe.image %>
+            <img src="<%= @recipe.image %>" class="img-responsive img-rounded" /><br/>
+            <% end %>
+            <p class="lead"><%= @recipe.description %></p>
+            
+            <h4>Ingredients</h4>
+            <ul class="list-group">
+                <%= render @recipe.ingredients %>
+            </ul>
+            <%= render 'ingredients/form' %>
+            
+            <!--<h4>Instructions</h4>
+            <ul class="list-group">
+                <li class="list-group-item">TO BE ADDED</li>
+            </ul>-->
+            
+            <%= link_to 'Edit', edit_recipe_path(@recipe) %>
+        </div>
+        
+        <div class="col-sm-4 text-center">
+            <img src="http://iab.wpengine.com/wp-content/uploads/2015/06/300x600.gif" width="300" height="600" />
+        </div>
+        
+    </div>
 
-<p>
-  <strong>Cook time:</strong>
-  <%= @recipe.cook_time %>
-</p>
- 
-<p>
-  <strong>Passive time:</strong>
-  <%= @recipe.passive_time %>
-</p>
-
-
-    <h2>Ingredients</h2>
-    <ul>
-    <%= render @recipe.ingredients %>
-    </ul>
-
-    <h2>Add an ingredient:</h2>
-    <%= render 'ingredients/form' %>
-
-    <%= link_to 'Edit', edit_recipe_path(@recipe) %> | 
-    <%= link_to 'Back', recipes_path %>
+    

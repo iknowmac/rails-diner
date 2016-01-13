@@ -1,5 +1,14 @@
-<h1>New Recipe</h1>
+    <div class="page-header">
+        <h1><span><%= link_to '<<', recipes_path %></span> Add Yours</h1>
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-8">
+            <%= render 'form' %>
+        </div>
+        <div class="col-sm-4 text-center" style="margin-top:20px;">
+            <img src="http://iab.wpengine.com/wp-content/uploads/2015/06/300x600.gif" width="300" height="600" />
+        </div>
+    </div>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', recipes_path %>
+    
