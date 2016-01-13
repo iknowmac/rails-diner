@@ -1,0 +1,41 @@
+<p>
+  <strong>Title:</strong>
+  <%= @recipe.title %>
+</p>
+ 
+<p>
+  <strong>Description:</strong>
+  <%= @recipe.description %>
+</p>
+
+<p>
+  <strong>Servings:</strong>
+  <%= @recipe.servings %>
+</p>
+ 
+<p>
+  <strong>Prep time:</strong>
+  <%= @recipe.prep_time %>
+</p>
+
+<p>
+  <strong>Cook time:</strong>
+  <%= @recipe.cook_time %>
+</p>
+ 
+<p>
+  <strong>Passive time:</strong>
+  <%= @recipe.passive_time %>
+</p>
+
+
+    <h2>Ingredients</h2>
+    <ul>
+    <%= render @recipe.ingredients %>
+    </ul>
+
+    <h2>Add an ingredient:</h2>
+    <%= render 'ingredients/form' %>
+
+    <%= link_to 'Edit', edit_recipe_path(@recipe) %> | 
+    <%= link_to 'Back', recipes_path %>

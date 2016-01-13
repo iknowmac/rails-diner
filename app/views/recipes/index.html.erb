@@ -1,0 +1,18 @@
+    
+    <%= stylesheet_link_tag params[:controller] %>
+    
+    <h1 class="add-recipe text-center"><a href="/recipes/new"><span>Recipes</span></a></h1>
+    <div class="row">
+        <div class="col-md-3 col-xs-1"></div>
+        <div class="col-md-6 col-xs-10">
+            <div class="list-group">
+                <% @recipes.each do |recipe| %>
+                <%= link_to recipe.title, recipe_path(recipe), class: "list-group-item" %>
+                <% end %>
+            </div>
+            <div class="text-center">
+                <%= will_paginate @recipes, renderer: BootstrapPagination::Rails %>
+            </div>
+        </div>
+        <div class="col-md-3 col-xs-1"></div>
+    </div>
