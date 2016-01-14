@@ -1,8 +1,21 @@
-    <%= form_for([@recipe, @recipe.instructions.build], :html => {:class => 'form-inline'}) do |f| %>
-        <div class="input-group">
-            <%= f.text_area :description, :class => 'form-control input-sm' %>
-            <span class="input-group-btn">
-                <%= f.submit 'Add Instruction', :class => 'btn btn-sm btn-default' %>
-            </span>
+<div class="modal fade" id="instructionModal" tabindex="-1" role="dialog" aria-labelledby="instructionModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="instructionModalLabel">New Instruction</h4>
+            </div>
+            <%= form_for([@recipe, @recipe.instructions.build]) do |f| %>
+            <div class="modal-body">
+                <div class="form-group">
+                    <%= f.text_area :description, :class => 'form-control' %>
+                </div>
+                <div class="form-group text-right">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <%= f.submit 'Add', :class => 'btn btn-primary' %>
+                </div>
+            </div>
+            <% end %>
         </div>
-    <% end %>
+    </div>
+</div>

@@ -1,6 +1,8 @@
 class RecipesController < ApplicationController
     
     def index
+        # Pagination provided by will_paginate & will_paginate-bootstrap gems. Also
+        # ordering DESC to put the most recent recipe at the top of my list.
         @recipes = Recipe.all.paginate(:page => params[:page], :per_page => 5).order(id: :DESC)
     end
     
@@ -20,7 +22,9 @@ class RecipesController < ApplicationController
         @recipe = Recipe.new(recipe_params)
         
         if @recipe.save
-            redirect_to @recipe
+            # render the edit view so we can add ingredients and instruction. This is
+            # kind of hack since I don't know how to build formsets like in Django.
+            render 'edit'
         else
             render 'new'
         end
