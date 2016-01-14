@@ -1,0 +1,5 @@
+<li class="list-group-item">
+    <%= instruction.description %> - 
+    <%= link_to 'delete', [instruction.recipe, instruction], method: :delete, 
+        data: { confirm: 'Are you sure?' } %>
+</li>

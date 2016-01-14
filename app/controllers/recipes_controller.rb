@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
     
     def index
-        @recipes = Recipe.all.paginate(:page => params[:page], :per_page => 5)
+        @recipes = Recipe.all.paginate(:page => params[:page], :per_page => 5).order(id: :DESC)
     end
     
     def show
@@ -42,11 +42,6 @@ class RecipesController < ApplicationController
  
         redirect_to recipes_path
     end
-    
-    #uploaded_io = params[:image]
-        #File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'wb') do |file|
-        #file.write(uploaded_io.read)
-    #end
     
     private
         def recipe_params

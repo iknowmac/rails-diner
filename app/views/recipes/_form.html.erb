@@ -1,5 +1,4 @@
 <%= form_for @recipe, :html => {:class => 'form-horizontal',:multipart => true} do |f| %>
-    
     <% if @recipe.errors.any? %>
     <div id="error_explanation">
         <h2>
@@ -18,40 +17,32 @@
         <%= f.label :title, :class => 'control-label' %>
         <%= f.text_field :title, :class => 'form-control' %>
     </div>
-    
     <div class="form-group">
         <%= f.label :image, :class => 'control-label' %>
         <%= f.file_field :image, :class => 'form-control' %>
     </div>
-    
     <div class="form-group">
         <%= f.label :description, :class => 'control-label' %>
         <%= f.text_area :description, :class => 'form-control' %>
     </div>
-
-  
     <div class="form-group">
         <%= f.label :servings, :class => 'control-label' %>
         <%= f.number_field :servings, :class => 'form-control' %>
     </div>
-  
     <div class="form-group">
         <%= f.label :prep_time, :class => 'control-label' %>
         <%= f.number_field :prep_time, :class => 'form-control' %>
     </div>
-  
     <div class="form-group">
         <%= f.label :cook_time, :class => 'control-label' %>
         <%= f.number_field :cook_time, :class => 'form-control' %>
     </div>
-  
     <div class="form-group">
         <%= f.label :passive_time, :class => 'control-label' %>
         <%= f.number_field :passive_time, :class => 'form-control' %>
     </div>
- 
+    
     <div class="form-group text-right">
-        
         <%= f.submit 'Save Recipe', :class => 'btn btn-default' %>
     </div>
 
