@@ -31,7 +31,16 @@ ActiveRecord::Schema.define(version: 20160113203130) do
 
   add_index "instructions", ["recipe_id"], name: "index_instructions_on_recipe_id"
 
-# Could not dump table "recipes" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "recipes", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "servings"
+    t.integer  "prep_time"
+    t.integer  "cook_time"
+    t.integer  "passive_time"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "image"
+  end
 
 end
