@@ -1,5 +1,5 @@
-Django Diner
-============
+Rails Diner
+===========
 
 Simple Rails application to handle a collection of recipes.
 
