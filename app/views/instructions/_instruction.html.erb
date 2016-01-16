@@ -1,5 +1,7 @@
-<li class="list-group-item">
-    <%= instruction.description %> - 
-    <%= link_to 'delete', [instruction.recipe, instruction], method: :delete, 
-        data: { confirm: 'Are you sure?' } %>
+<li class="list-group-item"> 
+    <%= link_to '<i class="fa fa-minus-circle"></i>'.html_safe,
+        [instruction.recipe, instruction], method: :delete, 
+        data: { confirm: 'Are you sure you want to dellete this instruction?' }, 
+        :title => "delete instruction" %> 
+    <%= instruction.description %>
 </li>

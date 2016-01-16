@@ -1,15 +1,22 @@
+<div class="container">
+    
     <div class="page-header">
-        <h1><%= link_to '<i class="fa fa-arrow-circle-left"></i>'.html_safe, recipes_path %> Add Yours</h1>
+        <h1>
+            <%= link_to '<i class="fa fa-arrow-circle-left"></i>'.html_safe, 
+                recipes_path, :title => "go back" %> 
+            Add Yours
+        </h1>
     </div>
     
-    <div class="row">
-        <div class="col-sm-8">
-            <% # Render the new_form which DOES NOT include associated models delete links. %>
-            <%= render 'new_form' %>
-        </div>
-        <div class="col-sm-4 text-center" style="margin-top:20px;">
-            <img src="http://iab.wpengine.com/wp-content/uploads/2015/06/300x600.gif" width="300" height="600" />
-        </div>
+    <div class="col-sm-8">
+        <% # Render the new_form which DOES NOT include associated models delete links. %>
+        <%= render 'new_form' %>
+    </div>
+    
+    <div class="col-sm-4 text-center" style="margin-top:20px;">
+        <img src="http://lorempixel.com/300/600/food/advertising" width="300" height="600" />
     </div>
 
-    
+</div>
+
+<%= render "footer" %>
