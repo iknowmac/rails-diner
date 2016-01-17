@@ -22,7 +22,3 @@ body {margin-bottom: 130px;background-color: #fff;font-family: 'Roboto', sans-se
 .add-row:active {color:#390 !important;}
 .add-row {display:inline; color:#390 !important;}
 .add-row:before {content:"\a";white-space:pre;}
-
-
-
-

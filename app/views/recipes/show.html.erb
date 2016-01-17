@@ -13,8 +13,8 @@
     </div>
     
     <div class="col-sm-8">
-        <% if @recipe.image %>
-        <img src="<%= @recipe.image %>" class="img-responsive img-rounded" /><br/>
+        <% if @recipe.image_url(:large) %>
+        <%= image_tag @recipe.image_url(:large), :class => "img-responsive img-rounded" %><br/>
         <% end %>
         <p class="lead"><%= @recipe.description %></p>
         <% unless @recipe.ingredients.blank? %>

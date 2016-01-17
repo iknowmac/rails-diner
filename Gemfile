@@ -46,8 +46,10 @@ gem 'will_paginate', '~> 3.0.5'
 # Use will_paginate-bootstrap
 gem 'will_paginate-bootstrap'
 
-# Use carrierwave. Read more: https://github.com/carrierwaveuploader/carrierwave
+# carrierwave use rmagick
+gem 'rmagick'
 gem 'carrierwave'
+gem 'jcrop-rails-v2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

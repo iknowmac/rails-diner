@@ -13,9 +13,24 @@
         <%= stylesheet_link_tag 'application', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', media: 'all' %>
     </head>
     <body>
-        
+        <% if flash[:notice] %>
+            <div id="global-alert" class="alert alert-info text-center" role="alert">
+                <strong>Notice!</strong> <%= flash[:notice] %>
+            </div>
+        <% end %>
         <%= yield %>
         
         <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+        <script type="text/javascript">
+            <!--
+            $(document).ready(function () {
+                window.setTimeout(function() {
+                    $(".alert").fadeTo(1000, 0).slideUp(500, function(){
+                        $(this).remove(); 
+                    });
+                }, 3000);
+            });
+            //-->
+        </script>
     </body>
 </html>

@@ -24,7 +24,7 @@ class RecipesController < ApplicationController
         if @recipe.save
             # render the edit view so we can add ingredients and instruction. This is
             # kind of hack since I don't know how to build formsets like in Django.
-            render 'edit'
+            render 'edit', notice: "Successfully created recipe."
         else
             render 'new'
         end
@@ -34,7 +34,7 @@ class RecipesController < ApplicationController
         @recipe = Recipe.find(params[:id])
         
         if @recipe.update(recipe_params)
-            redirect_to @recipe
+            redirect_to @recipe, notice: "Successfully updated recipe."
         else
             render 'edit'
         end
