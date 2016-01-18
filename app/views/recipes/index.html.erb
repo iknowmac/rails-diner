@@ -1,13 +1,15 @@
+<video autoplay loop poster="/static/cookies.jpg" id="bgvid">
+    <source src="polina.webm" type="video/webm">
+    <source src="/static/cookies.mp4" type="video/mp4">
+</video>
 <div class="container">
     <% # This is a hack to get ONLY the style for the index page loaded. There is %>
     <% # probably a better way. %>
-    <%= stylesheet_link_tag params[:controller] %>
-    
-    <h1 class="add-recipe text-center"><a href="/recipes/new"><span>Recipes</span></a></h1>
-    
-    <div class="row">
+    <%= stylesheet_link_tag params[:controller] %>    
+    <div class="vertical-center">
         <div class="col-md-3 col-xs-1"></div>
         <div class="col-md-6 col-xs-10">
+            <h1 class="add-recipe text-center"><a href="/recipes/new"><span>Recipes</span></a></h1>
             <div class="list-group">
                 <% @recipes.each do |recipe| %>
                 <%= link_to recipe.title, recipe_path(recipe), class: "list-group-item" %>

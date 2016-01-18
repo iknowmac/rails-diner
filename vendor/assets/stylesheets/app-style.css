@@ -7,7 +7,7 @@ body {margin-bottom: 130px;background-color: #fff;font-family: 'Roboto', sans-se
 
 .row.flush-col > [class*="col-"] {padding:0;}
 
-.add-recipe a {color: #333;}
+.add-recipe a {color: #fff;}
 .add-recipe a:hover {text-decoration: none;}
 .add-recipe a:hover span {display:none}
 .add-recipe a:hover:before {content:"Add Yours"}
