@@ -22,15 +22,20 @@
         
         <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
         <script type="text/javascript">
-            <!--
             $(document).ready(function () {
                 window.setTimeout(function() {
                     $(".alert").fadeTo(1000, 0).slideUp(500, function(){
                         $(this).remove(); 
                     });
                 }, 3000);
+                $('.recipe-list li').click(function(){
+                    if($(this).hasClass( "highlight")){
+                        $(this).removeClass('highlight');
+                    } else {
+                        $(this).addClass('highlight');
+                    }
+                });
             });
-            //-->
         </script>
     </body>
 </html>

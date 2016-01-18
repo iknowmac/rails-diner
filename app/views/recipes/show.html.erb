@@ -19,7 +19,7 @@
         <p class="lead"><%= @recipe.description %></p>
         <% unless @recipe.ingredients.blank? %>
         <h4>Ingredients</h4>
-        <ul class="list-group">
+        <ul class="list-group recipe-list">
             <% @recipe.ingredients.each do |ingredient| %>
             <li class="list-group-item"><%= ingredient.name %></li>
             <% end %>
@@ -27,7 +27,7 @@
         <% end %>
         <% unless @recipe.instructions.blank? %>
         <h4>Instructions</h4>
-        <ul class="list-group">
+        <ul class="list-group recipe-list">
             <% @recipe.instructions.each do |instruction| %>
             <li class="list-group-item"><%= instruction.description %></li>
             <% end %>

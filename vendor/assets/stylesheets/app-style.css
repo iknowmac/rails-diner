@@ -22,3 +22,7 @@ body {margin-bottom: 130px;background-color: #fff;font-family: 'Roboto', sans-se
 .add-row:active {color:#390 !important;}
 .add-row {display:inline; color:#390 !important;}
 .add-row:before {content:"\a";white-space:pre;}
+
+/* handle highlighting the list-item on interactions and ingredients */
+.recipe-list li:hover { cursor: pointer; cursor: hand; }
+.recipe-list .highlight {background-color:#d9edf7;}
